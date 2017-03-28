@@ -76,6 +76,10 @@ develop
            (`Pull Request 1 <https://github.com/palantir/atlasdb/pull/1727>`__,
            `Pull Request 2 <https://github.com/palantir/atlasdb/pull/1747>`__)
 
+    *    - |fixed|
+         - AtlasDbHttpClients no longer retry the same node three times in succession when dealing with a NotCurrentLeaderException.
+           (`Pull Request <https://github.com/palantir/atlasdb/pull/1747>`__)
+
     *    - |fixed| |improved|
          - Cassandra depedencies have been bumped to newer versions; should fix a bug (#1654) that caused Atlas probing downed Cassandra nodes every few minutes to see if they were up and working yet to eventually take out the entire cluster by steadily building up leaked connections, due to a bug in the underlying driver.
            (`Pull Request <https://github.com/palantir/atlasdb/pull/1524>`__)
