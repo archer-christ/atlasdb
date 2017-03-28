@@ -74,7 +74,7 @@ develop
            Previously, because of Jetty's idle timeout, OkHttp's silent connection retrying and our retry logic in FailoverFeignTarget, we would generate an endless stream of lock requests if using HTTP/2 and blocking for more than the Jetty idle timeout for a single lock.
            This would lead to starvation of other requests on the TimeLock server, since a lock request blocked on acquiring a lock consumes a server thread.
            (`Pull Request 1 <https://github.com/palantir/atlasdb/pull/1727>`__,
-           `Pull Request 2 <https://github.com/palantir/atlasdb/pull/foo>`__)
+           `Pull Request 2 <https://github.com/palantir/atlasdb/pull/1747>`__)
 
     *    - |fixed| |improved|
          - Cassandra depedencies have been bumped to newer versions; should fix a bug (#1654) that caused Atlas probing downed Cassandra nodes every few minutes to see if they were up and working yet to eventually take out the entire cluster by steadily building up leaked connections, due to a bug in the underlying driver.
